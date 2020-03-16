@@ -3,14 +3,14 @@
 """
 
 
-class GeneratorFileWithNodes:
-    def generation_file(self):
+class GeneratorFile:
+    def generation_file(self) -> str:
         """
-        Генерация тестового файла с узлами
+        Генерация тестового файла
         """
         pass
 
 
 if __name__ == "__main__":
-    generator_file = GeneratorFileWithNodes()
+    generator_file = GeneratorFile()
     generator_file.generation_file()
