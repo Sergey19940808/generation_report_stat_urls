@@ -1,10 +1,6 @@
-from generation_file import GeneratorFile
-
-
 class TestGeneratorFile:
-    def test_can_generation_file(self):
+    def test_can_generation_file(self, generator_file, remove_test_file):
         """
         Можно сгенерировать файл
         """
-        generator_file = GeneratorFile()
-        assert generator_file.generation_file() == "test_nodes.txt"
+        assert generator_file.generation_file() == "test_urls.txt"
