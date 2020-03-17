@@ -1,3 +1,8 @@
+"""
+Модуль для генерация отчёта со статистикой по узлам
+"""
+
+
 class GeneratorReportStatNodes:
     def get_stat(self):
         """
