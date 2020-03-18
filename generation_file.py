@@ -17,6 +17,7 @@ class GeneratorFile:
             "https://ulearn.me/",
             "https://ru.hexlet.io/",
             "https://mail.google.com/",
+            "https://empty.com/"
         ]
         urls_index = 0
         cnt_url_index = len(urls) - 1
