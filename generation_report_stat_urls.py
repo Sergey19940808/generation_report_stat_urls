@@ -4,7 +4,6 @@
 import sys
 import asyncio
 import csv
-
 import aiohttp
 
 from typing import Tuple, List
