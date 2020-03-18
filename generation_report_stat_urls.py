@@ -1,10 +1,9 @@
 """
 Модуль для генерация отчёта со статистикой по урлам
 """
-from typing import Tuple
-
 import requests
 
+from typing import Tuple
 from argparse import ArgumentParser
 
 from concurrent.futures.thread import ThreadPoolExecutor
@@ -62,22 +61,22 @@ class GeneratorReportStatUrls:
         self.file_name_for_unloading_stat = arg_parser.namespace.file_name_for_unloading_stat
         self.client = Client()
 
-    def get_stat(self):
+    def get_report(self):
         """
-        Получение статистики
+        Получение отчёта
         """
-        cnt_state_available, cnt_state_unavailable, cnt_state_not_set = self._get_result(self.file_name_with_urls)
+        cnt_state_available, cnt_state_unavailable, cnt_state_not_set = self._get_stat(self.file_name_with_urls)
         if not self.file_name_for_unloading_stat:
             msg = f"Количество доступных узлов: {cnt_state_available}\n" \
                   f"Количество недоступных узлов: {cnt_state_unavailable}\n" \
                   f"Количество узлов, состояние которых не установлено: {cnt_state_not_set}"
-
-            return Printer.print_msg(msg)
         else:
-            pass
+            msg = f"Отчёт с результатами статистики лежит в файле {self.file_name_for_unloading_stat}"
 
-    def _get_result(self, file_name: str) -> Tuple[int, int, int]:
-        urls = self._get_urls(file_name)[:10000]
+        return Printer.print_msg(msg)
+
+    def _get_stat(self, file_name: str) -> Tuple[int, int, int]:
+        urls = self._get_urls(file_name)[:5000]
         cnt_state_available = 0
         cnt_state_unavailable = 0
         cnt_state_not_set = 0
@@ -106,5 +105,5 @@ class GeneratorReportStatUrls:
 
 if __name__ == "__main__":
     generator_report_stat_nodes = GeneratorReportStatUrls()
-    generator_report_stat_nodes.get_stat()
+    generator_report_stat_nodes.get_report()
 

@@ -7,7 +7,6 @@ authors = ["Sergey199408081 <aleksey.serzh@mail.ru>"]
 [tool.poetry.dependencies]
 python = "3.7.5"
 requests-futures = "1.0.0"
-aioping = "0.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "5.4.1"
